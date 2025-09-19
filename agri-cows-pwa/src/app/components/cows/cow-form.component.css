@@ -1,0 +1,105 @@
+/* Wrapper global */
+.cow-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background: #f3f8f3;
+  min-height: calc(100vh - 70px); /* sous la navbar */
+}
+
+/* Carte du formulaire */
+.cow-form-card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Titre */
+.cow-form-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d572c;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* Groupes de champs */
+.form-group {
+  width: 80%;
+  max-width: 350px;
+  margin-bottom: 1rem;
+  text-align: left;
+
+}
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+.form-control:focus {
+  border-color: #2d572c;
+  box-shadow: 0 0 0 3px rgba(45, 87, 44, 0.25);
+  outline: none;
+}
+
+/* Bouton Créer */
+.btn-success {
+  width: 100%;
+  background: #2d572c;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn-success:hover:not(:disabled) {
+  background: #244a23;
+  transform: translateY(-1px);
+}
+.btn-success:disabled {
+  background: #a4c2a4;
+  cursor: not-allowed;
+}
+
+/* Alertes */
+.alert-danger {
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile ajustements */
+@media (max-width: 480px) {
+  .cow-form-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+  .cow-form-card h2 {
+    font-size: 1.2rem;
+  }
+}

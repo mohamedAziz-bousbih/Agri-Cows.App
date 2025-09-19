@@ -1,0 +1,143 @@
+/* Wrapper global */
+.cow-list-wrapper {
+  padding: 16px;
+  background: #f3f8f3;
+  min-height: calc(100vh - 70px); /* sous la navbar */
+}
+
+/* Header */
+.cow-list-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.search-bar {
+  flex: 1;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.search-bar:focus {
+  border-color: #2d572c;
+  box-shadow: 0 0 0 3px rgba(45, 87, 44, 0.25);
+  outline: none;
+}
+.add-btn {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 10px 16px;
+  background: #2d572c;
+  border: none;
+}
+.add-btn:hover {
+  background: #244a23;
+}
+
+/* Loader */
+.loading {
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  margin: 20px 0;
+}
+
+/* Liste de cartes */
+.cow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Carte vache */
+.cow-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.cow-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Info */
+.cow-card-info {
+  display: flex;
+  flex-direction: column;
+}
+.cow-id {
+  font-weight: 700;
+  color: #2d572c;
+  margin-bottom: 2px;
+}
+.cow-meta {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Actions */
+.cow-card-actions {
+  display: flex;
+  gap: 6px;
+}
+.cow-card-actions .btn {
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* Boutons spécifiques */
+.btn-outline-primary {
+  border-color: #2d572c;
+  color: #2d572c;
+}
+.btn-outline-primary:hover {
+  background: #2d572c;
+  color: #fff;
+}
+.btn-outline-danger {
+  border-color: #ff6666;
+  color: #ff4444;
+}
+.btn-outline-danger:hover {
+  background: #ff4444;
+  color: #fff;
+}
+.btn-outline-success {
+  border-color: #2d572c;
+  color: #2d572c;
+}
+.btn-outline-success:hover {
+  background: #2d572c;
+  color: #fff;
+}
+
+/* Mobile optimisé */
+@media (max-width: 576px) {
+  .cow-list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .add-btn {
+    width: 30%;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+
+  }
+  .cow-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .cow-card-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

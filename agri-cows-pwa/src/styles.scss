@@ -1,0 +1,8 @@
+@import "bootstrap/scss/bootstrap";
+
+:root { --container-max: 720px; }
+.container-narrow { max-width: var(--container-max); margin-inline: auto; }
+.btn-full { width: 100%; }
+.card-tap { padding: .75rem; border-radius: 1rem; }
+img.thumb { max-width: 100%; border-radius: .75rem; }
+.action-bar { position: sticky; bottom: 0; background: #fff; padding: .5rem; border-top: 1px solid #eee; }

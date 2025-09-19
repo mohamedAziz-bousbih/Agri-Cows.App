@@ -1,0 +1,95 @@
+/* ===== NAVBAR (override Bootstrap) ===== */
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+  background: linear-gradient(135deg, #2d572c, #3e7c3c) !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  padding: 0.55rem 1rem;
+}
+
+/* Conteneur */
+nav.navbar .container-narrow {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Brand */
+nav.navbar.navbar-light .navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: .3px;
+}
+
+/* Boutons */
+nav.navbar .btn {
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+/* Vaches */
+nav.navbar .btn.btn-outline-secondary {
+  color: #fff !important;
+  border-color: rgba(255,255,255,0.8) !important;
+}
+nav.navbar .btn.btn-outline-secondary:hover {
+  background: #fff !important;
+  color: #2d572c !important;
+}
+
+/* Connexion */
+nav.navbar .btn.btn-outline-primary {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+nav.navbar .btn.btn-outline-primary:hover {
+  background: #fff !important;
+  color: #2d572c !important;
+}
+
+/* Déconnexion (visible) */
+nav.navbar .btn.btn-outline-danger {
+    background: #fff !important;
+  color: #2d572c !important;
+
+}
+nav.navbar .btn.btn-outline-danger:hover {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Espace boutons */
+nav.navbar .d-flex.gap-2 { gap: 8px !important; }
+
+/* ===== LAYOUT GLOBAL ===== */
+.container-narrow {
+  max-width: 1100px;
+  margin: 16px auto;
+  padding: 0 12px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 576px) {
+  nav.navbar .container-narrow {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  nav.navbar .navbar-brand {
+    font-size: 1.05rem;
+    padding-bottom: 2px;
+  }
+  nav.navbar .d-flex.gap-2 {
+    width: 100%;
+    justify-content: flex-start; /* ou space-between si tu veux étirer */
+    gap: 6px !important;
+  }
+  nav.navbar .btn {
+    padding: 9px 12px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,63 @@
+<div class="cow-detail-wrapper" *ngIf="vache">
+  <div class="cow-detail-card">
+    <h2>🐄 Détails de la vache #{{ vache.id }}</h2>
+
+    <!-- Loader -->
+    <div *ngIf="loading" class="loading">⏳ Chargement...</div>
+
+    <!-- Formulaire -->
+    <form (ngSubmit)="save()" *ngIf="!loading" #cowDetailForm="ngForm">
+      <div class="form-group">
+        <label>Date du dernier vêlage</label>
+        <input type="date" class="form-control"
+               [(ngModel)]="vache.date_dernier_village"
+               name="date_dernier_village" />
+      </div>
+
+      <div class="form-group">
+        <label>Date du prochain vêlage (estimée)</label>
+        <input type="date" class="form-control"
+               [(ngModel)]="vache.date_prochain_village"
+               name="date_prochain_village" />
+      </div>
+
+      <div class="form-group">
+        <label>Date de l’insémination</label>
+        <input type="date" class="form-control"
+               [(ngModel)]="vache.date_insimination"
+               name="date_insimination" />
+      </div>
+
+      <div class="form-group">
+        <label>Date de la taghriz</label>
+        <input type="date" class="form-control"
+               [(ngModel)]="vache.date_taghriz"
+               name="date_taghriz" />
+      </div>
+
+      <div class="form-group">
+        <label>Historique médical </label>
+
+            <!-- Image historique -->
+  <div *ngIf="vache?.historique_medical_url" class="medical-preview">
+    <img 
+      [attr.src]="'http://localhost:5000' + vache.historique_medical_url"
+      alt="Historique médical"
+      class="medical-img" />
+  </div>
+  
+        <input type="file" class="form-control"
+               (change)="file = $any($event.target).files[0]" />
+      </div>
+
+      <button type="submit" class="btn btn-primary"
+              [disabled]="saving || !cowDetailForm.valid">
+        <span *ngIf="!saving">💾 Enregistrer</span>
+        <span *ngIf="saving">Enregistrement...</span>
+      </button>
+    </form>
+
+
+
+  </div>
+</div>

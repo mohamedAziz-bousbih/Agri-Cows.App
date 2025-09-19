@@ -1,0 +1,49 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="login-header">
+      <!-- Optionnel: un petit logo vache ou icône -->
+      <h2>Connexion</h2>
+      <p class="subtitle">Accédez à votre espace de gestion</p>
+    </div>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+
+      <div class="mb-3">
+        <label class="form-label">Nom d'utilisateur</label>
+        <input
+          class="form-control"
+          [(ngModel)]="model.nom"
+          name="nom"
+          required
+          autocomplete="username"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Mot de passe</label>
+        <input
+          type="password"
+          class="form-control"
+          [(ngModel)]="model.password"
+          name="password"
+          required
+          autocomplete="current-password"
+        />
+      </div>
+    
+    
+      <div style="margin-top: 30px; ;">
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loading || !loginForm.valid"
+      >
+        <span *ngIf="!loading">Se connecter</span>
+        <span *ngIf="loading">Chargement...</span>
+      </button>
+      </div>
+
+      <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+    </form>
+  </div>
+</div>

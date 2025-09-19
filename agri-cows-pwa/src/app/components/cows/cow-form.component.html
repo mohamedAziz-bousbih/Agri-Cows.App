@@ -1,0 +1,59 @@
+<div class="cow-form-wrapper">
+  <div class="cow-form-card">
+    <h2> Ajouter une vache</h2>
+
+    <form (ngSubmit)="save()" #cowForm="ngForm">
+
+      <div class="form-group">
+        <label>Le numero Id du vache </label>
+        <input type="number" class="form-control"
+               [(ngModel)]="model.id"
+               name="id" required />
+      </div>
+
+      <div class="form-group">
+        <label>Date du dernier vêlage</label>
+        <input type="date" class="form-control"
+               [(ngModel)]="model.date_dernier_village"
+               name="date_dernier_village" required />
+      </div>
+
+      <div class="form-group">
+        <label>Date du prochain vêlage (estimée)</label>
+        <input type="date" class="form-control"
+               [(ngModel)]="model.date_prochain_village"
+               name="date_prochain_village" required />
+      </div>
+
+      <div class="form-group">
+        <label>Date de l’insémination</label>
+        <input type="date" class="form-control"
+               [(ngModel)]="model.date_insimination"
+               name="date_insimination" />
+      </div>
+
+      <div class="form-group">
+        <label>Date de la taghriz</label>
+        <input type="date" class="form-control"
+               [(ngModel)]="model.date_taghriz"
+               name="date_taghriz" />
+      </div>
+
+      <div class="form-group">
+        <label>Historique médical (image)</label>
+        <input type="file" class="form-control"
+               (change)="file = $any($event.target).files[0]" />
+      </div>
+
+      <button type="submit" class="btn btn-success"
+              [disabled]="saving || !cowForm.valid">
+        <span *ngIf="!saving">Créer</span>
+        <span *ngIf="saving">Enregistrement...</span>
+      </button>
+
+      <div *ngIf="error" class="alert alert-danger mt-3">
+        {{ error }}
+      </div>
+    </form>
+  </div>
+</div>

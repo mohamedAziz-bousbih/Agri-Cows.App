@@ -1,0 +1,34 @@
+<div class="cow-list-wrapper">
+  <!-- Barre recherche + bouton ajout -->
+  <div class="cow-list-header">
+    <input class="form-control search-bar"
+           placeholder="🔍 Rechercher par ID..."
+           [(ngModel)]="q" />
+    <a routerLink="/vaches/new" class="btn btn-success add-btn">
+     Ajouter
+    </a>
+  </div>
+
+  <!-- Loader -->
+  <div class="loading" *ngIf="loading">⏳ Chargement...</div>
+
+  <!-- Liste -->
+  <div class="cow-list">
+    <div class="cow-card" *ngFor="let v of filtered">
+      <div class="cow-card-info">
+        <div class="cow-id">🐄 Vache #{{ v.id }}</div>
+        <div class="cow-meta">
+          Insémination : {{ v.date_insimination || '—' }}
+        </div>
+      </div>
+      <div class="cow-card-actions">
+        <a class="btn btn-sm btn-outline-primary"
+          [routerLink]="['/vaches', v.id]">📂 Ouvrir</a>
+        <a class="btn btn-sm btn-outline-success"
+          [routerLink]="['/vaches', v.id, 'milk']">🥛 Production</a>
+        <button class="btn btn-sm btn-outline-danger"
+                (click)="remove(v.id)">🗑️ Suppr.</button>
+      </div>
+    </div>
+  </div>
+</div>

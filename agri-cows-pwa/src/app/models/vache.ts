@@ -1,0 +1,1 @@
+export interface Vache { id: number; date_dernier_village?: string|null; date_prochain_village?: string|null; date_insimination?: string|null; date_taghriz?: string|null; historique_medical_url?: string|null; }

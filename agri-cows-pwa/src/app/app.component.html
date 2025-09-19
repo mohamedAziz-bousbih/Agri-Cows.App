@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-narrow d-flex w-100 justify-content-between">
+    <a class="navbar-brand" routerLink="/">Agri Cows</a>
+    <div class="d-flex gap-2">
+      <a class="btn btn-sm btn-outline-secondary" routerLink="/vaches">Vaches</a>
+      <button *ngIf="auth.isAuthenticated()" class="btn btn-sm btn-outline-danger" (click)="logout()">Déconnexion</button>
+      <a *ngIf="!auth.isAuthenticated()" class="btn btn-sm btn-outline-primary" routerLink="/login">Connexion</a>
+    </div>
+  </div>
+</nav>
+<div class="container-narrow mt-3">
+  <router-outlet></router-outlet>
+</div>

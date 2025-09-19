@@ -1,0 +1,14 @@
+<h3 class="h6">Production de lait</h3>
+<div *ngIf="loading">Chargement...</div>
+<div class="d-grid gap-2" *ngIf="!loading">
+  <div class="card p-2" *ngFor="let e of entries">
+    <div class="d-flex justify-content-between">
+      <div>
+        <div class="fw-bold">{{ e.date }} — {{ e.somme_quantite ?? 0 }} L</div>
+        <small class="text-muted">Matin: {{ e.quantite_lait_matin || 0 }} | Soir: {{ e.quantite_lait_soir || 0 }}</small>
+        <div><small>{{ e.remarque }}</small></div>
+      </div>
+      <button class="btn btn-sm btn-outline-danger" (click)="remove(e.id)">Suppr.</button>
+    </div>
+  </div>
+</div>

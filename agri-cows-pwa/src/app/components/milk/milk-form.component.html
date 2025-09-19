@@ -1,0 +1,54 @@
+<div class="milk-form-wrapper">
+  <h3 class="milk-title">🥛 Ajouter une production</h3>
+
+  <div class="card milk-card">
+    <div class="row g-3">
+      <!-- Date (auto-remplie aujourd'hui) -->
+      <div class="col-12">
+        <label class="form-label">Date</label>
+        <input type="date"
+               class="form-control"
+               [(ngModel)]="model.date"
+               [value]="today"
+               readonly />
+      </div>
+
+
+
+      <!-- Quantités -->
+      <div class="col-6">
+        <label class="form-label">Prodution matin en litre</label>
+        <input type="number" step="0.1"
+               class="form-control"
+               [(ngModel)]="model.quantite_lait_matin"
+               min="0">
+      </div>
+      <div class="col-6">
+        <label class="form-label"> Prodution soire en litre </label>
+        <input type="number" step="0.1"
+               class="form-control"
+               [(ngModel)]="model.quantite_lait_soir"
+               min="0">
+      </div>
+    </div>
+
+<div class="col-12">
+  <label class="form-label">Remarque</label>
+  <textarea class="form-remarque"
+            [(ngModel)]="model.remarque"
+            placeholder="Optionnel"
+            rows="3"></textarea>
+</div>
+
+    <!-- Actions -->
+    <div class="action-bar">
+      <button class="btn btn-primary w-100"
+              [disabled]="saving"
+              (click)="submit()">
+        <span *ngIf="!saving">Ajouter</span>
+        <span *ngIf="saving">Enregistrement...</span>
+      </button>
+      <div *ngIf="error" class="alert alert-danger mt-2">{{ error }}</div>
+    </div>
+  </div>
+</div>

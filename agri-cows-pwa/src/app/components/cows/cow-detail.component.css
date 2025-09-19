@@ -1,0 +1,126 @@
+/* Wrapper */
+.cow-detail-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: #f3f8f3;
+  min-height: calc(100vh - 70px);
+}
+
+/* Carte */
+.cow-detail-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Titre */
+.cow-detail-card h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #2d572c;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulaire */
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+.form-control {
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  width: 70%;
+  transition: all 0.2s ease;
+}
+.form-control:focus {
+  border-color: #2d572c;
+  box-shadow: 0 0 0 3px rgba(45, 87, 44, 0.25);
+  outline: none;
+}
+
+/* Bouton */
+.btn-primary {
+  width: 100%;
+  background: #2d572c;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn-primary:hover:not(:disabled) {
+  background: #244a23;
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  background: #a4c2a4;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.loading {
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Historique médical */
+.medical-history {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.medical-history h4 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #444;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .cow-detail-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+  .cow-detail-card h2 {
+    font-size: 1.2rem;
+  }
+}
+.medical-preview {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.medical-img {
+  max-width: 100%;
+  max-height: 240px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+.medical-img:hover {
+  transform: scale(1.03);
+}

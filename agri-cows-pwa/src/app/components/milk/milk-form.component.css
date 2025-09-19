@@ -1,0 +1,112 @@
+/* Wrapper */
+.milk-form-wrapper {
+  padding: 16px;
+  background: #f3f8f3;
+  min-height: calc(100vh - 70px);
+}
+
+/* Titre */
+.milk-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d572c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Carte */
+.milk-card {
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Labels */
+.form-label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 70%;
+  margin: 20px;
+  transition: all 0.2s ease;
+}
+.form-control:focus {
+  border-color: #2d572c;
+  box-shadow: 0 0 0 3px rgba(45, 87, 44, 0.25);
+  outline: none;
+}
+
+/* Bouton principal */
+/* Bouton Créer */
+.btn-primary {
+  width: 100%;
+  background: #2d572c;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn-primary:hover:not(:disabled) {
+  background: #244a23;
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  background: #a4c2a4;
+  cursor: not-allowed;
+}
+/* Champ Remarque */
+.form-remarque {
+  width: 70%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  resize: vertical; /* l’utilisateur peut agrandir si besoin */
+  transition: all 0.2s ease;
+  font-family: inherit; /* même police que l’app */
+}
+
+.form-remarque:focus {
+  border-color: #2d572c;
+  box-shadow: 0 0 0 3px rgba(45, 87, 44, 0.25);
+  outline: none;
+}
+
+/* Alert */
+.alert-danger {
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .milk-card {
+    padding: 16px;
+  }
+  .milk-title {
+    font-size: 1.1rem;
+  }
+}
