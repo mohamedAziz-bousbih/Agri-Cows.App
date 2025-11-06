@@ -5,7 +5,7 @@ Monorepo with:
 - **agri-cows-pwa** — TypeScript PWA (frontend)
 
 Use it to manage cattle data (herd, events like breeding/treatments/weights).
-
+and also medical history 
 ---
 
 ## Quick Start
